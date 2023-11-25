@@ -194,45 +194,113 @@ char *s21_strtok(char *str, const char *delim);
 
 // OTHER FUNCTIONS
 
-// Копирует символ c (беззнаковый тип) в первые n символов строки, на которую
-// указывает аргумент str
+/**
+ * @brief Copies the character c (an unsigned char) to the first n characters of
+ * the string pointed to, by the argument str.
+ * @param str pointer to string
+ * @param c copying character
+ * @param n quantity of characters
+ * @return pointer to string
+ */
 void *s21_memset(void *str, int c, s21_size_t n);
-// Выполняет поиск во внутреннем массиве номера ошибки errnum и возвращает
-// указатель на строку с сообщением об ошибке. Нужно объявить макросы,
-// содержащие массивы сообщений об ошибке для операционных систем mac и linux.
-// Описания ошибок есть в оригинальной библиотеке. Проверка текущей ОС
-// осуществляется с помощью директив
+
+/**
+ * @brief Searches an internal array for the error number errnum and returns a
+ * pointer to an error message string. You need to declare macros containing
+ * arrays of error messages for mac and linux operating systems. Error
+ * descriptions are available in the original library. Checking the current OS
+ * is carried out using directives.
+ * @param errnum error number
+ * @return pointer to error info string
+ */
 char *s21_strerror(int errnum);
-// Вычисляет длину строки str, не включая завершающий нулевой символ
+
+/**
+ * @brief Computes the length of the string str up to but not including the
+ * terminating null character.
+ * @param str pointer to string
+ * @return length of the string str
+ */
 s21_size_t s21_strlen(const char *str);
 
-// отправляет форматированный вывод в строку, на которую указывает str
-int s21_sprintf(char *str, const char *format, ...);
+//==============C# FUNCTIONS==============//
 
-// Возвращает копию строки (str), преобразованной в верхний регистр. В случае
-// какой-либо ошибки следует вернуть значение NULL
+/**
+ * @brief Returns a copy of string (str) converted to uppercase
+ * @param str pointer to string
+ * @return pointer to changed string or in case of any
+ * error, return NULL
+ */
 void *s21_to_upper(const char *str);
-// Возвращает копию строки (str), преобразованной в нижний регистр. В случае
-// какой-либо ошибки следует вернуть значение NULL
+
+/**
+ * @brief Returns a copy of string (str) converted to lowercase
+ * @param str pointer to string
+ * @return pointer to changed string or in case of any
+ * error, return NULL
+ */
 void *s21_to_lower(const char *str);
-// Возвращает новую строку, в которой указанная строка (str) вставлена в
-// указанную позицию (start_index) в данной строке (src). В случае какой-либо
-// ошибки следует вернуть значение NULL
+
+/**
+ * @brief Returns a new string in which a specified string (str) is inserted at
+ * a specified index position (start_index) in the given string (src)
+ * @param src given string
+ * @param str specified string
+ * @param start_index specified index position
+ * @return pointer to a new string or in case of any
+ * error, return NULL
+ */
 void *s21_insert(const char *src, const char *str, s21_size_t start_index);
 // Возвращает новую строку, в которой удаляются все начальные и конечные
 // вхождения набора заданных символов (trim_chars) из данной строки (src). В
 // случае какой-либо ошибки следует вернуть значение NULL
+
+/**
+ * @brief Returns a new string in which all leading and trailing occurrences of
+ * a set of specified characters (trim_chars) from the given string (src) are
+ * removed
+ * @param src given string
+ * @param trim_chars set of specified characters
+ * @return new string or in case of any
+ * error, return NULL
+ */
 void *s21_trim(const char *src, const char *trim_chars);
 
-// clear buff for tests
+//=========clear buff for tests==========//
 
 void clear_buffs(char **buffer, char **buffer2);
 
-// SPECIAL FUNCTIONS
+//===============SPRINTF==============//
 
-int s21_parse_flags(const char *format, s21_size_t *i, Format *form);
-int s21_parse_width(va_list *ap, const char *format, s21_size_t *i,
-                    Format *form);
+/**
+ * @brief sends formatted output to a string pointed to, by str.
+ * @param str pointer to string
+ * @param format pointer to output string
+ * @return length of str
+ */
+int s21_sprintf(char *str, const char *format, ...);
+
+// SPECIAL FUNCTIONS FOR SPRINTF
+
+/**
+ * @brief Support function for parcing sprintf flags
+ * @param format pointer to output string
+ * @param i pointer to iterator in output string
+ * @param form pointer to struct that contains info about flags and specs
+ */
+void s21_parse_flags(const char *format, s21_size_t *i, Format *form);
+
+/**
+ * @brief Support function for parcing width info
+ * @param ap pointer to complete object type suitable for holding the
+ * information needed by the macros va_start and va_end.
+ * @param format pointer to output string
+ * @param i pointer to iterator in output string
+ * @param form pointer to struct that contains info about flags and specs
+ */
+void s21_parse_width(va_list *ap, const char *format, s21_size_t *i,
+                     Format *form);
+
 int s21_parse_accuracy(va_list *ap, const char *format, s21_size_t *i,
                        Format *form);
 // парсинг L, h, l

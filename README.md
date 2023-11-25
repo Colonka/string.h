@@ -4,7 +4,7 @@ Implementation of the string.h library with additions
 
 ## Introduction
 
-In this project I've developed my own implementation of the string.h library in C programming language with some additions (with my own implementation of sprintf and sscanf functions). The string.h library is the main C library for string processing.
+In this project I've developed my own implementation of the string.h library in C programming language with some additions (with my own implementation of `sprintf` function). The string.h library is the main C library for string processing. In addition to I've developed my own implementation of [special string processing functions](#special-string-processing-functions) (from the String class in C#)
 
 ## Information
 
@@ -52,35 +52,34 @@ The only support for strings in the programming language proper is that the comp
 | 19 | char *strstr(const char *haystack, const char *needle) | Finds the first occurrence of the entire string needle (not including the terminating null character) which appears in the string haystack. |
 | 20 | char *strtok(char *str, const char *delim) | Breaks string str into a series of tokens separated by delim. |
 
-### sprintf and sscanf
+### sprintf
 
-- int sscanf(const char *str, const char *format, ...) - reads formatted input from a string.
 - int sprintf(char *str, const char *format, ...) - sends formatted output to a string pointed to, by str.
 
 where:
 - str − This is the C string that the function processes as its source to retrieve the data;
 - format − This is the C string that contains one or more of the following items: Whitespace character, Non-whitespace character and Format specifiers. A format specifier for print functions follows this prototype: %[flags][width][.precision][length]specifier. A format specifier for scan functions follows this prototype: %[*][width][length]specifier.
 
-### sprintf And sscanf Specifiers
+### sprintf Specifiers
 
-| No. | Specifier | sprintf output | sscanf output |
-| --- | --- | --- | --- |
-| 1 | c | Character | Character |
-| 2 | d | Signed decimal integer | Signed decimal integer |
-| 3 | i | Signed decimal integer | Signed integer (may be decimal, octal or hexadecimal) |
-| 4 | e | Scientific notation (mantissa/exponent) using e character (the output of the numbers must match up to e-6) | Decimal floating point or scientific notation (mantissa/exponent) |
-| 5 | E | Scientific notation (mantissa/exponent) using E character | Decimal floating point or scientific notation (mantissa/exponent) |
-| 6 | f | Decimal floating point | Decimal floating point or scientific notation (mantissa/exponent) |
-| 7 | g | Uses the shortest representation of decimal floating point | Decimal floating point or scientific notation (mantissa/exponent) |
-| 8 | G | Uses the shortest representation of decimal floating point | Decimal floating point or scientific notation (mantissa/exponent) |
-| 9 | o | Unsigned octal | Unsigned octal |
-| 10 | s | String of characters | String of characters |
-| 11 | u | Unsigned decimal integer | Unsigned decimal integer |
-| 12 | x | Unsigned hexadecimal integer | Unsigned hexadecimal integer (any letters) |
-| 13 | X | Unsigned hexadecimal integer (capital letters) | Unsigned hexadecimal integer (any letters) |
-| 14 | p | Pointer address | Pointer address |
-| 15 | n | Number of characters printed until %n occurs | Number of characters scanned until %n occurs |
-| 16 | % | Character % | Character % |
+| No. | Specifier | sprintf output |
+| --- | --- | --- |
+| 1 | c | Character |
+| 2 | d | Signed decimal integer |
+| 3 | i | Signed decimal integer |
+| 4 | e | Scientific notation (mantissa/exponent) using e character (the output of the numbers must match up to e-6) |
+| 5 | E | Scientific notation (mantissa/exponent) using E character |
+| 6 | f | Decimal floating point |
+| 7 | g | Uses the shortest representation of decimal floating point |
+| 8 | G | Uses the shortest representation of decimal floating point |
+| 9 | o | Unsigned octal |
+| 10 | s | String of characters |
+| 11 | u | Unsigned decimal integer |
+| 12 | x | Unsigned hexadecimal integer |
+| 13 | X | Unsigned hexadecimal integer (capital letters) |
+| 14 | p | Pointer address |
+| 15 | n | Number of characters printed until %n occurs |
+| 16 | % | Character % |
 
 ### sprintf Flags
 
@@ -92,7 +91,7 @@ where:
 | 4 | # | Used with o, x or X specifiers the value is preceded with 0, 0x or 0X respectively for values different than zero. Used with e, E and f, it forces the written output to contain a decimal point even if no digits would follow. By default, if no digits follow, no decimal point is written. Used with g or G the result is the same as with e or E but trailing zeros are not removed. |
 | 5 | 0 | Left-pads the number with zeroes (0) instead of spaces, where padding is specified (see width sub-specifier). |
 
-### sprintf And sscanf Width Description
+### sprintf Width Description
 
 | No. |	Width | Description |
 | --- | --- | --- |
@@ -106,7 +105,7 @@ where:
 | 1	| .number | For integer specifiers (d, i, o, u, x, X) − precision specifies the minimum number of digits to be written. If the value to be written is shorter than this number, the result is padded with leading zeros. The value is not truncated even if the result is longer. A precision of 0 means that no character is written for the value 0. For e, E and f specifiers − this is the number of digits to be printed after the decimal point. For g and G specifiers − This is the maximum number of significant digits to be printed. For s − this is the maximum number of characters to be printed. By default all characters are printed until the ending null character is encountered. For c type − it has no effect. When no precision is specified for specifiers e, E, f, g and G, the default one is 6. When no precision is specified for all other kind of specifiers, the default is 1. If the period is specified without an explicit value for precision, 0 is assumed. |
 | 2	| .* | The precision is not specified in the format string, but as an additional integer value argument preceding the argument that has to be formatted. |
 
-### sprintf And sscanf Length Description
+### sprintf Length Description
 
 | No. |	Length | Description |
 | --- | --- | --- |
@@ -114,7 +113,7 @@ where:
 | 2 | l | The argument is interpreted as a long int or unsigned long int for integer specifiers (i, d, o, u, x and X), and as a wide character or wide character string for specifiers c and s. |
 | 3 | L | The argument is interpreted as a long double (only applies to floating point specifiers − e, E, f, g and G). |
 
-### Special string processing functions (from the String class in C#)
+### Special string processing functions
 
 | No. | Function | Description |
 | ------ | ------ | ------ |

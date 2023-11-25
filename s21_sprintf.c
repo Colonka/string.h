@@ -40,7 +40,7 @@ int s21_sprintf(char *str, const char *format, ...) {
 
 // SPRINTF FUNCTIONS
 
-int s21_parse_flags(const char *format, s21_size_t *i, Format *form) {
+void s21_parse_flags(const char *format, s21_size_t *i, Format *form) {
   while (s21_strchr("# +-0", format[*i]) != s21_NULL && format[*i]) {
     if (format[*i] == '#' && form->flag_r == 0)
       form->flag_r = 1;
@@ -54,11 +54,10 @@ int s21_parse_flags(const char *format, s21_size_t *i, Format *form) {
       form->flag_z = 1;
     (*i)++;
   }
-  return 0;
 }
 
-int s21_parse_width(va_list *ap, const char *format, s21_size_t *i,
-                    Format *form) {
+void s21_parse_width(va_list *ap, const char *format, s21_size_t *i,
+                     Format *form) {
   if (s21_strchr("-0123456789", format[*i]) != s21_NULL) {
     if (format[*i] == '-') (*i)++;
     while (s21_strchr("-0123456789", format[*i]) != s21_NULL) {
