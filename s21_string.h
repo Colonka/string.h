@@ -301,30 +301,178 @@ void s21_parse_flags(const char *format, s21_size_t *i, Format *form);
 void s21_parse_width(va_list *ap, const char *format, s21_size_t *i,
                      Format *form);
 
-int s21_parse_accuracy(va_list *ap, const char *format, s21_size_t *i,
-                       Format *form);
-// парсинг L, h, l
-int s21_parse_length(const char *format, s21_size_t *i, Format *form);
+/**
+ * @brief Support function for parcing accuracy info
+ * @param ap pointer to complete object type suitable for holding the
+ * information needed by the macros va_start and va_end.
+ * @param format pointer to output string
+ * @param i pointer to iterator in output string
+ * @param form pointer to struct that contains info about flags and specs
+ */
+void s21_parse_accuracy(va_list *ap, const char *format, s21_size_t *i,
+                        Format *form);
+
+/**
+ * @brief Support function for parcing length info
+ * @param format pointer to output string
+ * @param i pointer to iterator in output string
+ * @param form pointer to struct that contains info about flags and specs
+ */
+void s21_parse_length(const char *format, s21_size_t *i, Format *form);
+
+/**
+ * @brief Support function for parcing specificator
+ * @param ap pointer to complete object type suitable for holding the
+ * information needed by the macros va_start and va_end.
+ * @param j pointer to iterator in output string
+ * @param form pointer to struct that contains info about flags and specs
+ * @return pointer to string
+ */
 char *s21_switch_spec(va_list *ap, s21_size_t j, Format *form);
-// %n
+
+/**
+ * @brief Function that processing 'n' spec
+ * @param ap pointer to complete object type suitable for holding the
+ * information needed by the macros va_start and va_end.
+ * @param j pointer to iterator in output string
+ * @return pointer to string
+ */
 char *s21_process_spec_n(va_list *ap, s21_size_t j);
+
+/**
+ * @brief Function that processing 'i' 'd' specs
+ * @param ap pointer to complete object type suitable for holding the
+ * information needed by the macros va_start and va_end.
+ * @param form pointer to struct that contains info about flags and specs
+ * @return pointer to string
+ */
 char *s21_process_spec_id(va_list *ap, Format *form);
-// работа с х, Х, о и unsigned
+
+/**
+ * @brief Function that processing 'x' 'X' 'o' specs and unsigned
+ * @param ap pointer to complete object type suitable for holding the
+ * information needed by the macros va_start and va_end.
+ * @param form pointer to struct that contains info about flags and specs
+ * @return pointer to string
+ */
 char *s21_process_spec_xuo(va_list *ap, Format *form);
+
+/**
+ * @brief Function that processing 'p' spec
+ * @param ap pointer to complete object type suitable for holding the
+ * information needed by the macros va_start and va_end.
+ * @param form pointer to struct that contains info about flags and specs
+ * @return pointer to string
+ */
 char *s21_process_spec_p(va_list *ap, Format *form);
+
+/**
+ * @brief Function that processing 'f' spec
+ * @param ap pointer to complete object type suitable for holding the
+ * information needed by the macros va_start and va_end.
+ * @param form pointer to struct that contains info about flags and specs
+ * @return pointer to string
+ */
 char *s21_process_spec_f(va_list *ap, Format *form);
+
+/**
+ * @brief Function that processing 'e' spec
+ * @param ap pointer to complete object type suitable for holding the
+ * information needed by the macros va_start and va_end.
+ * @param form pointer to struct that contains info about flags and specs
+ * @return pointer to string
+ */
 char *s21_process_spec_e(va_list *ap, Format *form);
+
+/**
+ * @brief Function that processing 'g' spec
+ * @param ap pointer to complete object type suitable for holding the
+ * information needed by the macros va_start and va_end.
+ * @param form pointer to struct that contains info about flags and specs
+ * @return pointer to string
+ */
 char *s21_process_spec_g(va_list *ap, Format *form);
+
+/**
+ * @brief Function that processing 'c' spec
+ * @param ap pointer to complete object type suitable for holding the
+ * information needed by the macros va_start and va_end.
+ * @param form pointer to struct that contains info about flags and specs
+ * @return pointer to string
+ */
 char *s21_process_spec_c(va_list *ap, Format *form);
+
+/**
+ * @brief Function that processing 's' spec
+ * @param ap pointer to complete object type suitable for holding the
+ * information needed by the macros va_start and va_end.
+ * @param form pointer to struct that contains info about flags and specs
+ * @return pointer to string
+ */
 char *s21_process_spec_s(va_list *ap, Format *form);
+
+/**
+ * @brief Function for reverses string
+ * @param str pointer to string
+ * @param len string's length
+ */
 void s21_reverse(char str[], int len);
+
+/**
+ * @brief Function that processing flags
+ * @param str pointer to string
+ * @param form pointer to struct that contains info about flags and specs
+ */
 void s21_process_flags(char *str, Format *form);
+
+/**
+ * @brief Function that transform integer to string
+ * @param num number
+ * @param base the base of the number
+ * @param form pointer to struct that contains info about flags and specs
+ * @return pointer to string
+ */
 char *s21_itoa(long long num, int base, Format *form);
+
+/**
+ * @brief Function that transform string to number
+ * @param str pointer to string
+ * @return number
+ */
 long long s21_atoi(char *str);
+
+/**
+ * @brief Function that transform float to string
+ * @param f number
+ * @param acc accuracy
+ * @param form pointer to struct that contains info about flags and specs
+ * @return pointer to string
+ */
 char *s21_ftoa(long double f, int acc, Format *form);
 // убирает нули в конце числа
+
+/**
+ * @brief Function that delete zeros in the end of number
+ * @param str pointer to string that contains number
+ */
 void s21_delete_zero(char *str);
+
+/**
+ * @brief Function that transform float to string by exponential notation of a
+ * number
+ * @param f number
+ * @param form pointer to struct that contains info about flags and specs
+ * @return pointer to string
+ */
 char *s21_ftoexp(long double f, Format *form);
+
+/**
+ * @brief Function that transform float to string by exponential notation of a
+ * number or float (in dependence of length)
+ * @param f number
+ * @param form pointer to struct that contains info about flags and specs
+ * @return pointer to string
+ */
 char *s21_ftog(long double f, Format *form);
 
 #if defined(__APPLE__)

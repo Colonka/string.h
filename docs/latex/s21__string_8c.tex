@@ -1,0 +1,552 @@
+\doxysection{s21\+\_\+string.\+c File Reference}
+\hypertarget{s21__string_8c}{}\label{s21__string_8c}\index{s21\_string.c@{s21\_string.c}}
+{\ttfamily \#include \"{}s21\+\_\+string.\+h\"{}}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{s21__string_8c_a2288db6a39e06947c445bb307a031b2b}{s21\+\_\+memcpy}} (void \texorpdfstring{$\ast$}{*}dest, const void \texorpdfstring{$\ast$}{*}src, \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}} n)
+\begin{DoxyCompactList}\small\item\em Function that copies n characters from src to dest. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{s21__string_8c_ab8aab598aa0da3c82dae1a15828b82b3}{s21\+\_\+memmove}} (void \texorpdfstring{$\ast$}{*}dest, const void \texorpdfstring{$\ast$}{*}src, \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}} n)
+\begin{DoxyCompactList}\small\item\em Another function to copy n characters from src to dest. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{s21__string_8c_a844909daa889d904565ef26c98f3445c}{s21\+\_\+strcpy}} (char \texorpdfstring{$\ast$}{*}dest, const char \texorpdfstring{$\ast$}{*}src)
+\begin{DoxyCompactList}\small\item\em Copies the string pointed to, by src to dest. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{s21__string_8c_aff95affbe1280d420e1482c0ceb411e8}{s21\+\_\+strncpy}} (char \texorpdfstring{$\ast$}{*}dest, const char \texorpdfstring{$\ast$}{*}src, \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}} n)
+\begin{DoxyCompactList}\small\item\em Copies up to n characters from the string pointed to, by src to dest. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{s21__string_8c_a1b521c0d1993ddec8c2785455f3e11fc}{s21\+\_\+strcat}} (char \texorpdfstring{$\ast$}{*}dest, const char \texorpdfstring{$\ast$}{*}src)
+\begin{DoxyCompactList}\small\item\em Appends the string pointed to, by src to the end of the string pointed to by dest. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{s21__string_8c_ac423b1bb7ed91d0d7ae5cf4e0c7bb329}{s21\+\_\+strncat}} (char \texorpdfstring{$\ast$}{*}dest, const char \texorpdfstring{$\ast$}{*}src, \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}} n)
+\begin{DoxyCompactList}\small\item\em Appends the string pointed to, by src to the end of the string pointed to, by dest up to n characters long. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{s21__string_8c_ab48847a951ccb27e2fe4a287a4c30a15}{s21\+\_\+memcmp}} (const void \texorpdfstring{$\ast$}{*}str1, const void \texorpdfstring{$\ast$}{*}str2, \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}} n)
+\begin{DoxyCompactList}\small\item\em Compares the first n bytes of str1 and str2. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{s21__string_8c_a42676a561d60ff511c97c32aae9990ce}{s21\+\_\+strcmp}} (const char \texorpdfstring{$\ast$}{*}str1, const char \texorpdfstring{$\ast$}{*}str2)
+\begin{DoxyCompactList}\small\item\em Compares str1 and str2. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{s21__string_8c_a36a5fb2a5a16802fb4047f83666c8540}{s21\+\_\+strncmp}} (const char \texorpdfstring{$\ast$}{*}str1, const char \texorpdfstring{$\ast$}{*}str2, \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}} n)
+\begin{DoxyCompactList}\small\item\em Compares at most the first n bytes of str1 and str2. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{s21__string_8c_a13ffa28f4cfbcabe8bbcf59d4a4a2a1f}{s21\+\_\+memchr}} (const void \texorpdfstring{$\ast$}{*}str, int c, \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}} n)
+\begin{DoxyCompactList}\small\item\em Searches for the first occurrence of the character c (an unsigned char) in the first n bytes of the string pointed to, by the argument str. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{s21__string_8c_a05406bee96bd573e8f92a2b49ff4bc85}{s21\+\_\+strchr}} (const char \texorpdfstring{$\ast$}{*}str, int c)
+\begin{DoxyCompactList}\small\item\em Searches for the first occurrence of the character c (an unsigned char) in the string pointed to, by the argument str. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}} \mbox{\hyperlink{s21__string_8c_a4569262f4e11e8e81eeb09870a5b6c8a}{s21\+\_\+strcspn}} (const char \texorpdfstring{$\ast$}{*}str1, const char \texorpdfstring{$\ast$}{*}str2)
+\begin{DoxyCompactList}\small\item\em Calculates the length of the initial segment of str1 which consists entirely of characters not in str2. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{s21__string_8c_a640df3f70e7f70f43b7d13a857bf56c4}{s21\+\_\+strpbrk}} (const char \texorpdfstring{$\ast$}{*}str1, const char \texorpdfstring{$\ast$}{*}str2)
+\begin{DoxyCompactList}\small\item\em Finds the first character in the string str1 that matches any character specified in str2. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{s21__string_8c_af038e0f31c704e43035edb8264284600}{s21\+\_\+strrchr}} (const char \texorpdfstring{$\ast$}{*}str, int c)
+\begin{DoxyCompactList}\small\item\em Searches for the last occurrence of the character c (an unsigned char) in the string pointed to by the argument str. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}} \mbox{\hyperlink{s21__string_8c_a860ccb1d00f4cb92a6feeb7066665d7c}{s21\+\_\+strspn}} (const char \texorpdfstring{$\ast$}{*}str1, const char \texorpdfstring{$\ast$}{*}str2)
+\begin{DoxyCompactList}\small\item\em Calculates the length of the initial segment of str1 which consists entirely of characters in str2. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{s21__string_8c_abee4f347f8f53d3dd6d29e5a1c600717}{s21\+\_\+strstr}} (const char \texorpdfstring{$\ast$}{*}haystack, const char \texorpdfstring{$\ast$}{*}needle)
+\begin{DoxyCompactList}\small\item\em Finds the first occurrence of the entire string needle (not including the terminating null character) which appears in the string haystack. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{s21__string_8c_a2df0f694a42a2ed65544e9c35b9873c1}{s21\+\_\+strtok}} (char \texorpdfstring{$\ast$}{*}str, const char \texorpdfstring{$\ast$}{*}delim)
+\begin{DoxyCompactList}\small\item\em Breaks string str into a series of tokens separated by delim. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{s21__string_8c_a5527928f7a5eed7f1365725f56f2d4f6}{s21\+\_\+memset}} (void \texorpdfstring{$\ast$}{*}str, int c, \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}} n)
+\begin{DoxyCompactList}\small\item\em Copies the character c (an unsigned char) to the first n characters of the string pointed to, by the argument str. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{s21__string_8c_ad7a787727fa4943c59f20e838cf74906}{s21\+\_\+strerror}} (int errnum)
+\begin{DoxyCompactList}\small\item\em Searches an internal array for the error number errnum and returns a pointer to an error message string. You need to declare macros containing arrays of error messages for mac and linux operating systems. Error descriptions are available in the original library. Checking the current OS is carried out using directives. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}} \mbox{\hyperlink{s21__string_8c_a8c3a44c9607646785bafb5f7c7629bcf}{s21\+\_\+strlen}} (const char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Computes the length of the string str up to but not including the terminating null character. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{s21__string_8c_a8ddcfd70e8a5f9782db6680e5229ce52}{s21\+\_\+to\+\_\+upper}} (const char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Returns a copy of string (str) converted to uppercase. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{s21__string_8c_a4becae7010aa790361c9fd68cbddba09}{s21\+\_\+to\+\_\+lower}} (const char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Returns a copy of string (str) converted to lowercase. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{s21__string_8c_ad377bb3ea09e7cf33dc975b3a3d9b1f7}{s21\+\_\+insert}} (const char \texorpdfstring{$\ast$}{*}src, const char \texorpdfstring{$\ast$}{*}str, \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}} start\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Returns a new string in which a specified string (str) is inserted at a specified index position (start\+\_\+index) in the given string (src) \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{s21__string_8c_a2e9e40183fec12ddadae2227ab71e11e}{s21\+\_\+trim}} (const char \texorpdfstring{$\ast$}{*}src, const char \texorpdfstring{$\ast$}{*}trim\+\_\+chars)
+\begin{DoxyCompactList}\small\item\em Returns a new string in which all leading and trailing occurrences of a set of specified characters (trim\+\_\+chars) from the given string (src) are removed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{s21__string_8c_ad377bb3ea09e7cf33dc975b3a3d9b1f7}\label{s21__string_8c_ad377bb3ea09e7cf33dc975b3a3d9b1f7} 
+\index{s21\_string.c@{s21\_string.c}!s21\_insert@{s21\_insert}}
+\index{s21\_insert@{s21\_insert}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_insert()}{s21\_insert()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} s21\+\_\+insert (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{src,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{\mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}}}]{start\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+Returns a new string in which a specified string (str) is inserted at a specified index position (start\+\_\+index) in the given string (src) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & given string \\
+\hline
+{\em str} & specified string \\
+\hline
+{\em start\+\_\+index} & specified index position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to a new string or in case of any error, return NULL 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_a13ffa28f4cfbcabe8bbcf59d4a4a2a1f}\label{s21__string_8c_a13ffa28f4cfbcabe8bbcf59d4a4a2a1f} 
+\index{s21\_string.c@{s21\_string.c}!s21\_memchr@{s21\_memchr}}
+\index{s21\_memchr@{s21\_memchr}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_memchr()}{s21\_memchr()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} s21\+\_\+memchr (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{str,  }\item[{int}]{c,  }\item[{\mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}}}]{n }\end{DoxyParamCaption})}
+
+
+
+Searches for the first occurrence of the character c (an unsigned char) in the first n bytes of the string pointed to, by the argument str. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & pointer to string \\
+\hline
+{\em c} & sought character \\
+\hline
+{\em n} & quantity of bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to finded character in str 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_ab48847a951ccb27e2fe4a287a4c30a15}\label{s21__string_8c_ab48847a951ccb27e2fe4a287a4c30a15} 
+\index{s21\_string.c@{s21\_string.c}!s21\_memcmp@{s21\_memcmp}}
+\index{s21\_memcmp@{s21\_memcmp}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_memcmp()}{s21\_memcmp()}}
+{\footnotesize\ttfamily int s21\+\_\+memcmp (\begin{DoxyParamCaption}\item[{const void \texorpdfstring{$\ast$}{*}}]{str1,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{str2,  }\item[{\mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}}}]{n }\end{DoxyParamCaption})}
+
+
+
+Compares the first n bytes of str1 and str2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str1} & pointer to first string \\
+\hline
+{\em str2} & pointer to second string \\
+\hline
+{\em n} & quantity of bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+comparison result 0 -\/ identical 1 -\/ not identical 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_a2288db6a39e06947c445bb307a031b2b}\label{s21__string_8c_a2288db6a39e06947c445bb307a031b2b} 
+\index{s21\_string.c@{s21\_string.c}!s21\_memcpy@{s21\_memcpy}}
+\index{s21\_memcpy@{s21\_memcpy}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_memcpy()}{s21\_memcpy()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} s21\+\_\+memcpy (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{dest,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{src,  }\item[{\mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}}}]{n }\end{DoxyParamCaption})}
+
+
+
+Function that copies n characters from src to dest. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & string where copies \\
+\hline
+{\em src} & string from copies \\
+\hline
+{\em n} & quantity of characters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to dest 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_ab8aab598aa0da3c82dae1a15828b82b3}\label{s21__string_8c_ab8aab598aa0da3c82dae1a15828b82b3} 
+\index{s21\_string.c@{s21\_string.c}!s21\_memmove@{s21\_memmove}}
+\index{s21\_memmove@{s21\_memmove}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_memmove()}{s21\_memmove()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} s21\+\_\+memmove (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{dest,  }\item[{const void \texorpdfstring{$\ast$}{*}}]{src,  }\item[{\mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}}}]{n }\end{DoxyParamCaption})}
+
+
+
+Another function to copy n characters from src to dest. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & string where copies \\
+\hline
+{\em src} & string from copies \\
+\hline
+{\em n} & quantity of characters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to dest 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_a5527928f7a5eed7f1365725f56f2d4f6}\label{s21__string_8c_a5527928f7a5eed7f1365725f56f2d4f6} 
+\index{s21\_string.c@{s21\_string.c}!s21\_memset@{s21\_memset}}
+\index{s21\_memset@{s21\_memset}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_memset()}{s21\_memset()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} s21\+\_\+memset (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{str,  }\item[{int}]{c,  }\item[{\mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}}}]{n }\end{DoxyParamCaption})}
+
+
+
+Copies the character c (an unsigned char) to the first n characters of the string pointed to, by the argument str. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & pointer to string \\
+\hline
+{\em c} & copying character \\
+\hline
+{\em n} & quantity of characters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to string 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_a1b521c0d1993ddec8c2785455f3e11fc}\label{s21__string_8c_a1b521c0d1993ddec8c2785455f3e11fc} 
+\index{s21\_string.c@{s21\_string.c}!s21\_strcat@{s21\_strcat}}
+\index{s21\_strcat@{s21\_strcat}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_strcat()}{s21\_strcat()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} s21\+\_\+strcat (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{dest,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{src }\end{DoxyParamCaption})}
+
+
+
+Appends the string pointed to, by src to the end of the string pointed to by dest. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & string where copies \\
+\hline
+{\em src} & string from copies \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to dest 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_a05406bee96bd573e8f92a2b49ff4bc85}\label{s21__string_8c_a05406bee96bd573e8f92a2b49ff4bc85} 
+\index{s21\_string.c@{s21\_string.c}!s21\_strchr@{s21\_strchr}}
+\index{s21\_strchr@{s21\_strchr}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_strchr()}{s21\_strchr()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} s21\+\_\+strchr (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{int}]{c }\end{DoxyParamCaption})}
+
+
+
+Searches for the first occurrence of the character c (an unsigned char) in the string pointed to, by the argument str. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & pointer to string \\
+\hline
+{\em c} & sought character \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to finded character in str 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_a42676a561d60ff511c97c32aae9990ce}\label{s21__string_8c_a42676a561d60ff511c97c32aae9990ce} 
+\index{s21\_string.c@{s21\_string.c}!s21\_strcmp@{s21\_strcmp}}
+\index{s21\_strcmp@{s21\_strcmp}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_strcmp()}{s21\_strcmp()}}
+{\footnotesize\ttfamily int s21\+\_\+strcmp (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str1,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{str2 }\end{DoxyParamCaption})}
+
+
+
+Compares str1 and str2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str1} & pointer to first string \\
+\hline
+{\em str2} & pointer to second string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+comparison result 0 -\/ identical 1 -\/ not identical 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_a844909daa889d904565ef26c98f3445c}\label{s21__string_8c_a844909daa889d904565ef26c98f3445c} 
+\index{s21\_string.c@{s21\_string.c}!s21\_strcpy@{s21\_strcpy}}
+\index{s21\_strcpy@{s21\_strcpy}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_strcpy()}{s21\_strcpy()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} s21\+\_\+strcpy (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{dest,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{src }\end{DoxyParamCaption})}
+
+
+
+Copies the string pointed to, by src to dest. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & string where copies \\
+\hline
+{\em src} & string from copies \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to dest 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_a4569262f4e11e8e81eeb09870a5b6c8a}\label{s21__string_8c_a4569262f4e11e8e81eeb09870a5b6c8a} 
+\index{s21\_string.c@{s21\_string.c}!s21\_strcspn@{s21\_strcspn}}
+\index{s21\_strcspn@{s21\_strcspn}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_strcspn()}{s21\_strcspn()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}} s21\+\_\+strcspn (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str1,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{str2 }\end{DoxyParamCaption})}
+
+
+
+Calculates the length of the initial segment of str1 which consists entirely of characters not in str2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str1} & pointer to str1 \\
+\hline
+{\em str2} & pointer to str1 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+length of the initial segment of str1 which consists entirely of characters not in str2. 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_ad7a787727fa4943c59f20e838cf74906}\label{s21__string_8c_ad7a787727fa4943c59f20e838cf74906} 
+\index{s21\_string.c@{s21\_string.c}!s21\_strerror@{s21\_strerror}}
+\index{s21\_strerror@{s21\_strerror}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_strerror()}{s21\_strerror()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} s21\+\_\+strerror (\begin{DoxyParamCaption}\item[{int}]{errnum }\end{DoxyParamCaption})}
+
+
+
+Searches an internal array for the error number errnum and returns a pointer to an error message string. You need to declare macros containing arrays of error messages for mac and linux operating systems. Error descriptions are available in the original library. Checking the current OS is carried out using directives. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em errnum} & error number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to error info string 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_a8c3a44c9607646785bafb5f7c7629bcf}\label{s21__string_8c_a8c3a44c9607646785bafb5f7c7629bcf} 
+\index{s21\_string.c@{s21\_string.c}!s21\_strlen@{s21\_strlen}}
+\index{s21\_strlen@{s21\_strlen}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_strlen()}{s21\_strlen()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}} s21\+\_\+strlen (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+
+
+Computes the length of the string str up to but not including the terminating null character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & pointer to string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+length of the string str 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_ac423b1bb7ed91d0d7ae5cf4e0c7bb329}\label{s21__string_8c_ac423b1bb7ed91d0d7ae5cf4e0c7bb329} 
+\index{s21\_string.c@{s21\_string.c}!s21\_strncat@{s21\_strncat}}
+\index{s21\_strncat@{s21\_strncat}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_strncat()}{s21\_strncat()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} s21\+\_\+strncat (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{dest,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{src,  }\item[{\mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}}}]{n }\end{DoxyParamCaption})}
+
+
+
+Appends the string pointed to, by src to the end of the string pointed to, by dest up to n characters long. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & string where copies \\
+\hline
+{\em src} & string from copies \\
+\hline
+{\em n} & quantity of characters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to dest 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_a36a5fb2a5a16802fb4047f83666c8540}\label{s21__string_8c_a36a5fb2a5a16802fb4047f83666c8540} 
+\index{s21\_string.c@{s21\_string.c}!s21\_strncmp@{s21\_strncmp}}
+\index{s21\_strncmp@{s21\_strncmp}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_strncmp()}{s21\_strncmp()}}
+{\footnotesize\ttfamily int s21\+\_\+strncmp (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str1,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{str2,  }\item[{\mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}}}]{n }\end{DoxyParamCaption})}
+
+
+
+Compares at most the first n bytes of str1 and str2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str1} & pointer to first string \\
+\hline
+{\em str2} & pointer to second string \\
+\hline
+{\em n} & quantity of bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+comparison result 0 -\/ identical 1 -\/ not identical 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_aff95affbe1280d420e1482c0ceb411e8}\label{s21__string_8c_aff95affbe1280d420e1482c0ceb411e8} 
+\index{s21\_string.c@{s21\_string.c}!s21\_strncpy@{s21\_strncpy}}
+\index{s21\_strncpy@{s21\_strncpy}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_strncpy()}{s21\_strncpy()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} s21\+\_\+strncpy (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{dest,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{src,  }\item[{\mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}}}]{n }\end{DoxyParamCaption})}
+
+
+
+Copies up to n characters from the string pointed to, by src to dest. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & string where copies \\
+\hline
+{\em src} & string from copies \\
+\hline
+{\em n} & quantity of characters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to dest 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_a640df3f70e7f70f43b7d13a857bf56c4}\label{s21__string_8c_a640df3f70e7f70f43b7d13a857bf56c4} 
+\index{s21\_string.c@{s21\_string.c}!s21\_strpbrk@{s21\_strpbrk}}
+\index{s21\_strpbrk@{s21\_strpbrk}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_strpbrk()}{s21\_strpbrk()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} s21\+\_\+strpbrk (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str1,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{str2 }\end{DoxyParamCaption})}
+
+
+
+Finds the first character in the string str1 that matches any character specified in str2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str1} & pointer to str1 \\
+\hline
+{\em str2} & pointer to str1 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the first character in the string str1 that matches any character specified in str2 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_af038e0f31c704e43035edb8264284600}\label{s21__string_8c_af038e0f31c704e43035edb8264284600} 
+\index{s21\_string.c@{s21\_string.c}!s21\_strrchr@{s21\_strrchr}}
+\index{s21\_strrchr@{s21\_strrchr}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_strrchr()}{s21\_strrchr()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} s21\+\_\+strrchr (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{int}]{c }\end{DoxyParamCaption})}
+
+
+
+Searches for the last occurrence of the character c (an unsigned char) in the string pointed to by the argument str. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & pointer to string \\
+\hline
+{\em c} & sought character \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to character in str or NULL if there wasn\textquotesingle{}t finding 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_a860ccb1d00f4cb92a6feeb7066665d7c}\label{s21__string_8c_a860ccb1d00f4cb92a6feeb7066665d7c} 
+\index{s21\_string.c@{s21\_string.c}!s21\_strspn@{s21\_strspn}}
+\index{s21\_strspn@{s21\_strspn}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_strspn()}{s21\_strspn()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\+\_\+size\+\_\+t}} s21\+\_\+strspn (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str1,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{str2 }\end{DoxyParamCaption})}
+
+
+
+Calculates the length of the initial segment of str1 which consists entirely of characters in str2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str1} & pointer to str1 \\
+\hline
+{\em str2} & pointer to str1 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+length of the initial segment of str1 which consists entirely of characters in str2 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_abee4f347f8f53d3dd6d29e5a1c600717}\label{s21__string_8c_abee4f347f8f53d3dd6d29e5a1c600717} 
+\index{s21\_string.c@{s21\_string.c}!s21\_strstr@{s21\_strstr}}
+\index{s21\_strstr@{s21\_strstr}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_strstr()}{s21\_strstr()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} s21\+\_\+strstr (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{haystack,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{needle }\end{DoxyParamCaption})}
+
+
+
+Finds the first occurrence of the entire string needle (not including the terminating null character) which appears in the string haystack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em haystack} & pointer to string haystack \\
+\hline
+{\em needle} & pointer to string needle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to first occurrence in haystack string 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_a2df0f694a42a2ed65544e9c35b9873c1}\label{s21__string_8c_a2df0f694a42a2ed65544e9c35b9873c1} 
+\index{s21\_string.c@{s21\_string.c}!s21\_strtok@{s21\_strtok}}
+\index{s21\_strtok@{s21\_strtok}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_strtok()}{s21\_strtok()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} s21\+\_\+strtok (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{delim }\end{DoxyParamCaption})}
+
+
+
+Breaks string str into a series of tokens separated by delim. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & to string \\
+\hline
+{\em delim} & pointer to delim \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the first character of the found substring in str 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_a4becae7010aa790361c9fd68cbddba09}\label{s21__string_8c_a4becae7010aa790361c9fd68cbddba09} 
+\index{s21\_string.c@{s21\_string.c}!s21\_to\_lower@{s21\_to\_lower}}
+\index{s21\_to\_lower@{s21\_to\_lower}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_to\_lower()}{s21\_to\_lower()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} s21\+\_\+to\+\_\+lower (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+
+
+Returns a copy of string (str) converted to lowercase. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & pointer to string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to changed string or in case of any error, return NULL 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_a8ddcfd70e8a5f9782db6680e5229ce52}\label{s21__string_8c_a8ddcfd70e8a5f9782db6680e5229ce52} 
+\index{s21\_string.c@{s21\_string.c}!s21\_to\_upper@{s21\_to\_upper}}
+\index{s21\_to\_upper@{s21\_to\_upper}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_to\_upper()}{s21\_to\_upper()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} s21\+\_\+to\+\_\+upper (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+
+
+Returns a copy of string (str) converted to uppercase. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & pointer to string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to changed string or in case of any error, return NULL 
+\end{DoxyReturn}
+\Hypertarget{s21__string_8c_a2e9e40183fec12ddadae2227ab71e11e}\label{s21__string_8c_a2e9e40183fec12ddadae2227ab71e11e} 
+\index{s21\_string.c@{s21\_string.c}!s21\_trim@{s21\_trim}}
+\index{s21\_trim@{s21\_trim}!s21\_string.c@{s21\_string.c}}
+\doxysubsubsection{\texorpdfstring{s21\_trim()}{s21\_trim()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} s21\+\_\+trim (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{src,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{trim\+\_\+chars }\end{DoxyParamCaption})}
+
+
+
+Returns a new string in which all leading and trailing occurrences of a set of specified characters (trim\+\_\+chars) from the given string (src) are removed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & given string \\
+\hline
+{\em trim\+\_\+chars} & set of specified characters \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new string or in case of any error, return NULL 
+\end{DoxyReturn}

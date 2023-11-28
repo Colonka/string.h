@@ -72,11 +72,10 @@ void s21_parse_width(va_list *ap, const char *format, s21_size_t *i,
     }
     (*i)++;
   }
-  return 0;
 }
 
-int s21_parse_accuracy(va_list *ap, const char *format, s21_size_t *i,
-                       Format *form) {
+void s21_parse_accuracy(va_list *ap, const char *format, s21_size_t *i,
+                        Format *form) {
   if (format[*i] == '.') {
     (*i)++;
     if (s21_strchr("0123456789", format[*i]) != s21_NULL) {
@@ -93,10 +92,9 @@ int s21_parse_accuracy(va_list *ap, const char *format, s21_size_t *i,
       form->accuracy = 0;
     }
   }
-  return 0;
 }
 
-int s21_parse_length(const char *format, s21_size_t *i, Format *form) {
+void s21_parse_length(const char *format, s21_size_t *i, Format *form) {
   if (s21_strchr("hlL", format[*i]) != s21_NULL) {
     form->length = format[*i];
     (*i)++;
@@ -105,7 +103,6 @@ int s21_parse_length(const char *format, s21_size_t *i, Format *form) {
       (*i)++;
     }
   }
-  return 0;
 }
 
 char *s21_switch_spec(va_list *ap, s21_size_t j, Format *form) {
@@ -263,7 +260,6 @@ char *s21_process_spec_s(va_list *ap, Format *form) {
     k++;
   }
   res[k] = '\0';
-
   return res;
 }
 
@@ -373,7 +369,6 @@ char *s21_itoa(long long num, int base, Format *form) {
     if (form->accuracy == 0 && form->spec != 'f') {
       temp_str[i] = '\0';
       flag = 1;
-
     } else if (form->spec == 'g' || form->spec == 'G') {
       temp_str[i] = '0';
       temp_str[i + 1] = '\0';
@@ -390,8 +385,6 @@ char *s21_itoa(long long num, int base, Format *form) {
       temp_str[i++] = (rem > 9) ? (rem - 10) + upper_letter : rem + '0';
       temp_num /= base;
     }
-
-    //  точность для 16 и 8-ричных систем счислений заполняется нулями
     if (s21_strchr("xXouid", form->spec) != s21_NULL) {
       int acc = form->accuracy;
       if (acc > 0) acc -= (int)s21_strlen(temp_str);
@@ -451,7 +444,6 @@ char *s21_ftoa(long double f, int acc, Format *form) {
     s21_strcpy(&str[++len], part);
     free(part);
   }
-
   return str;
 }
 
@@ -515,7 +507,6 @@ char *s21_ftoexp(long double f, Format *form) {
     s21_strcpy(&str[i], tm);
     free(tm);
   }
-
   return str;
 }
 
@@ -546,7 +537,6 @@ char *s21_ftog(long double f, Format *form) {
     str = s21_ftoa(f, form->accuracy - count_c, form);
     if (form->flag_r == 0) s21_delete_zero(str);
   }
-
   return str;
 }
 

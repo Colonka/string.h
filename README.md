@@ -13,7 +13,15 @@ The only support for strings in the programming language proper is that the comp
 
 ## Instructions for running
 
+Being in `string.h` folder make command `make` in terminal that create static library `s21_string`. Then include `s21_string.h` in your file and link `s21_string.a` while compilation of your source files.
 
+`#include "<Directory where the header resides>/s21_string.h"`
+
+`-L<Directory where the library resides> -l<library name>`
+
+## Documentation
+
+To open library documentation run command `make docs` in terminal being in `string.h` folder
 
 ### string.h Types
 

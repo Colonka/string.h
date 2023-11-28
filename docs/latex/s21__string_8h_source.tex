@@ -1,0 +1,280 @@
+\doxysection{s21\+\_\+string.\+h}
+\hypertarget{s21__string_8h_source}{}\label{s21__string_8h_source}\mbox{\hyperlink{s21__string_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ S21\_STRING\_H\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ S21\_STRING\_H\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <limits.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdarg.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ s21\_NULL\ ((void\ *)0)}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ s21\_size\_t\ unsigned\ long\ long}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ BUFFERSIZE\ 1024}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ EPSILON\_VALUE\ 0.000001f}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ SPACE\_SYM\ "{}\ \(\backslash\)n\(\backslash\)r\(\backslash\)t\(\backslash\)v\(\backslash\)f"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_format_a2a893d3f38d2dfe0153438ae2f04f980}{flag\_r}};}
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_format_aedc4a1546a0b6b1003abc9d010d9f61c}{flag\_s}};}
+\DoxyCodeLine{00019\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_format_a31a149da0e98746b0bd984c460d9f56c}{flag\_p}};}
+\DoxyCodeLine{00020\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_format_aaa0313c3387182d6ca0f27a71b920776}{flag\_m}};}
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_format_a6e294cf4a61a3735f7d94f35a658db6c}{flag\_z}};}
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_format_a03eb2ef97b1bc0cd6cccf38bd4131ea6}{width}};}
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_format_a9b3a253f0539b169846ac7bae698c211}{accuracy}};}
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_format_aa8288c438e172025071fc76745fe089b}{length}};}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_format_ac2d6af9f6e48e7f935741667be4872a9}{length2}};}
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_format_ae65fd0686ecf16cdc884b8391c595304}{float\_part}};}
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_format_a7d7971c479700268b630c2b5f8f3fc3a}{is\_negative}};}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_format_a40e6e543e6b8c6061188c9b168654378}{spec}};}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_format_a1151c52e18e95804cb54ebeb50dd3a1e}{unsign}};}
+\DoxyCodeLine{00030\ \}\ \mbox{\hyperlink{struct_format}{Format}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ COPY\ FUNCTIONS}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{s21__string_8h_a2288db6a39e06947c445bb307a031b2b}{s21\_memcpy}}(\textcolor{keywordtype}{void}\ *dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *src,\ \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\_size\_t}}\ n);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{s21__string_8h_ab8aab598aa0da3c82dae1a15828b82b3}{s21\_memmove}}(\textcolor{keywordtype}{void}\ *dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *src,\ \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\_size\_t}}\ n);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_a844909daa889d904565ef26c98f3445c}{s21\_strcpy}}(\textcolor{keywordtype}{char}\ *dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *src);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_aff95affbe1280d420e1482c0ceb411e8}{s21\_strncpy}}(\textcolor{keywordtype}{char}\ *dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *src,\ \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\_size\_t}}\ n);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{comment}{//\ CONCATENATION\ FUNCTIONS}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_a1b521c0d1993ddec8c2785455f3e11fc}{s21\_strcat}}(\textcolor{keywordtype}{char}\ *dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *src);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_ac423b1bb7ed91d0d7ae5cf4e0c7bb329}{s21\_strncat}}(\textcolor{keywordtype}{char}\ *dest,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *src,\ \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\_size\_t}}\ n);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{comment}{//\ COMPAIRSON\ FUNCTIONS}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{s21__string_8h_ab48847a951ccb27e2fe4a287a4c30a15}{s21\_memcmp}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *str1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *str2,\ \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\_size\_t}}\ n);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00107\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{s21__string_8h_a42676a561d60ff511c97c32aae9990ce}{s21\_strcmp}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str2);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{s21__string_8h_a36a5fb2a5a16802fb4047f83666c8540}{s21\_strncmp}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str2,\ \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\_size\_t}}\ n);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{comment}{//\ SEARCH\ FUNCTIONS}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00128\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{s21__string_8h_a13ffa28f4cfbcabe8bbcf59d4a4a2a1f}{s21\_memchr}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *str,\ \textcolor{keywordtype}{int}\ c,\ \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\_size\_t}}\ n);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00137\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_a05406bee96bd573e8f92a2b49ff4bc85}{s21\_strchr}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str,\ \textcolor{keywordtype}{int}\ c);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00147\ \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\_size\_t}}\ \mbox{\hyperlink{s21__string_8h_a4569262f4e11e8e81eeb09870a5b6c8a}{s21\_strcspn}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str2);}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00157\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_a640df3f70e7f70f43b7d13a857bf56c4}{s21\_strpbrk}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str2);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00166\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_af038e0f31c704e43035edb8264284600}{s21\_strrchr}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str,\ \textcolor{keywordtype}{int}\ c);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00176\ \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\_size\_t}}\ \mbox{\hyperlink{s21__string_8h_a860ccb1d00f4cb92a6feeb7066665d7c}{s21\_strspn}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str2);}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00185\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_abee4f347f8f53d3dd6d29e5a1c600717}{s21\_strstr}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *haystack,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *needle);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00193\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_a2df0f694a42a2ed65544e9c35b9873c1}{s21\_strtok}}(\textcolor{keywordtype}{char}\ *str,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *delim);}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \textcolor{comment}{//\ OTHER\ FUNCTIONS}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00205\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{s21__string_8h_a5527928f7a5eed7f1365725f56f2d4f6}{s21\_memset}}(\textcolor{keywordtype}{void}\ *str,\ \textcolor{keywordtype}{int}\ c,\ \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\_size\_t}}\ n);}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00216\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_ad7a787727fa4943c59f20e838cf74906}{s21\_strerror}}(\textcolor{keywordtype}{int}\ errnum);}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00224\ \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\_size\_t}}\ \mbox{\hyperlink{s21__string_8h_a8c3a44c9607646785bafb5f7c7629bcf}{s21\_strlen}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str);}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \textcolor{comment}{//==============C\#\ FUNCTIONS==============//}}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00234\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{s21__string_8h_a8ddcfd70e8a5f9782db6680e5229ce52}{s21\_to\_upper}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str);}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00242\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{s21__string_8h_a4becae7010aa790361c9fd68cbddba09}{s21\_to\_lower}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str);}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00253\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{s21__string_8h_ad377bb3ea09e7cf33dc975b3a3d9b1f7}{s21\_insert}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *src,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str,\ \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\_size\_t}}\ start\_index);}
+\DoxyCodeLine{00254\ \textcolor{comment}{//\ Возвращает\ новую\ строку,\ в\ которой\ удаляются\ все\ начальные\ и\ конечные}}
+\DoxyCodeLine{00255\ \textcolor{comment}{//\ вхождения\ набора\ заданных\ символов\ (trim\_chars)\ из\ данной\ строки\ (src).\ В}}
+\DoxyCodeLine{00256\ \textcolor{comment}{//\ случае\ какой-\/либо\ ошибки\ следует\ вернуть\ значение\ NULL}}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00267\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{s21__string_8h_a2e9e40183fec12ddadae2227ab71e11e}{s21\_trim}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *src,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *trim\_chars);}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \textcolor{comment}{//=========clear\ buff\ for\ tests==========//}}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__string_8h_aff7b8741eb79b238ef5ccd0c21b0b5df}{clear\_buffs}}(\textcolor{keywordtype}{char}\ **buffer,\ \textcolor{keywordtype}{char}\ **buffer2);}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \textcolor{comment}{//===============SPRINTF==============//}}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00281\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{s21__string_8h_acb71872fcf909696f6ae27c91f8fb68d}{s21\_sprintf}}(\textcolor{keywordtype}{char}\ *str,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *format,\ ...);}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \textcolor{comment}{//\ SPECIAL\ FUNCTIONS\ FOR\ SPRINTF}}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00291\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__string_8h_a3ba1db3aac78bb391350f9d0a95f101d}{s21\_parse\_flags}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *format,\ \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\_size\_t}}\ *i,\ \mbox{\hyperlink{struct_format}{Format}}\ *form);}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00301\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__string_8h_aacd4652bd8cf6260863f86cc11e069a3}{s21\_parse\_width}}(va\_list\ *ap,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *format,\ \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\_size\_t}}\ *i,}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_format}{Format}}\ *form);}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00312\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__string_8h_a3298d0882ac88acdbf1208404309835a}{s21\_parse\_accuracy}}(va\_list\ *ap,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *format,\ \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\_size\_t}}\ *i,}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_format}{Format}}\ *form);}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00321\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__string_8h_a1b8d6d82a9516c6384aa59559c684fc3}{s21\_parse\_length}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *format,\ \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\_size\_t}}\ *i,\ \mbox{\hyperlink{struct_format}{Format}}\ *form);}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00331\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_a68afbfd71e0b006c94e4b894aacd187f}{s21\_switch\_spec}}(va\_list\ *ap,\ \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\_size\_t}}\ j,\ \mbox{\hyperlink{struct_format}{Format}}\ *form);}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00340\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_a14b413b88c4f1ea223d59d4164caff5d}{s21\_process\_spec\_n}}(va\_list\ *ap,\ \mbox{\hyperlink{s21__string_8h_ac78a5ec1c4cea6795496c4557e34d6b9}{s21\_size\_t}}\ j);}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00349\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_a3ef8a7c463ce17c70ac7e47bf738752b}{s21\_process\_spec\_id}}(va\_list\ *ap,\ \mbox{\hyperlink{struct_format}{Format}}\ *form);}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00358\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_af898078efb453bf47d4b92d26fbe8ba3}{s21\_process\_spec\_xuo}}(va\_list\ *ap,\ \mbox{\hyperlink{struct_format}{Format}}\ *form);}
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00367\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_acc191f95296b65cbc4c80e868335f5bf}{s21\_process\_spec\_p}}(va\_list\ *ap,\ \mbox{\hyperlink{struct_format}{Format}}\ *form);}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00376\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_a3dfe53c29cac18562b21aa3c3ac9bf39}{s21\_process\_spec\_f}}(va\_list\ *ap,\ \mbox{\hyperlink{struct_format}{Format}}\ *form);}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00385\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_a95fa3eab0b519b17e98d250158326f2d}{s21\_process\_spec\_e}}(va\_list\ *ap,\ \mbox{\hyperlink{struct_format}{Format}}\ *form);}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00394\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_a41c7cc399b9ca459a14dc05f6a96c834}{s21\_process\_spec\_g}}(va\_list\ *ap,\ \mbox{\hyperlink{struct_format}{Format}}\ *form);}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00403\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_a572e899c3c1a61f7277025c7f7f43988}{s21\_process\_spec\_c}}(va\_list\ *ap,\ \mbox{\hyperlink{struct_format}{Format}}\ *form);}
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00412\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_aca8ac633f454a84f92b316fb966b5cdb}{s21\_process\_spec\_s}}(va\_list\ *ap,\ \mbox{\hyperlink{struct_format}{Format}}\ *form);}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00419\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__string_8h_a85c66d437b87b7e584e31cce87e1f247}{s21\_reverse}}(\textcolor{keywordtype}{char}\ str[],\ \textcolor{keywordtype}{int}\ len);}
+\DoxyCodeLine{00420\ }
+\DoxyCodeLine{00426\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__string_8h_ab1c149e890df35228c6b91db91677716}{s21\_process\_flags}}(\textcolor{keywordtype}{char}\ *str,\ \mbox{\hyperlink{struct_format}{Format}}\ *form);}
+\DoxyCodeLine{00427\ }
+\DoxyCodeLine{00435\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_a8d185a72d39f733d6e054571aaf667b8}{s21\_itoa}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ num,\ \textcolor{keywordtype}{int}\ base,\ \mbox{\hyperlink{struct_format}{Format}}\ *form);}
+\DoxyCodeLine{00436\ }
+\DoxyCodeLine{00442\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{s21__string_8h_a87138beef5c9104a9b9c6745e32f8c09}{s21\_atoi}}(\textcolor{keywordtype}{char}\ *str);}
+\DoxyCodeLine{00443\ }
+\DoxyCodeLine{00451\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_a2a07e1788d9536602f08c90c03dedee5}{s21\_ftoa}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ f,\ \textcolor{keywordtype}{int}\ acc,\ \mbox{\hyperlink{struct_format}{Format}}\ *form);}
+\DoxyCodeLine{00452\ \textcolor{comment}{//\ убирает\ нули\ в\ конце\ числа}}
+\DoxyCodeLine{00453\ }
+\DoxyCodeLine{00458\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{s21__string_8h_a6f8de67ac150dc2f93122fd67a1e94c1}{s21\_delete\_zero}}(\textcolor{keywordtype}{char}\ *str);}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00467\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_a966268530301530cb0f8b39c623d8162}{s21\_ftoexp}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ f,\ \mbox{\hyperlink{struct_format}{Format}}\ *form);}
+\DoxyCodeLine{00468\ }
+\DoxyCodeLine{00476\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{s21__string_8h_a0c47f0381c1cbcfbb9c9c1e2a61fbd8b}{s21\_ftog}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{double}\ f,\ \mbox{\hyperlink{struct_format}{Format}}\ *form);}
+\DoxyCodeLine{00477\ }
+\DoxyCodeLine{00478\ \textcolor{preprocessor}{\#if\ defined(\_\_APPLE\_\_)}}
+\DoxyCodeLine{00479\ \textcolor{preprocessor}{\#define\ N\ 106}}
+\DoxyCodeLine{00480\ \textcolor{preprocessor}{\#define\ LIST\_ERRORS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00481\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00482\ \textcolor{preprocessor}{\ \ \ \ "{}Undefined\ error:\ 0"{}},\ "{}Operation\ not\ permitted"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ "{}No\ such\ file\ or\ directory"{},\ "{}No\ such\ process"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ "{}Interrupted\ system\ call"{},\ "{}Input/output\ error"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ "{}Device\ not\ configured"{},\ "{}Argument\ list\ too\ long"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ "{}Exec\ format\ error"{},\ "{}Bad\ file\ descriptor"{},\ "{}No\ child\ processes"{},\ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ "{}Resource\ deadlock\ avoided"{},\ "{}Cannot\ allocate\ memory"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ "{}Permission\ denied"{},\ "{}Bad\ address"{},\ "{}Block\ device\ required"{},\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ "{}Resource\ busy"{},\ "{}File\ exists"{},\ "{}Cross-\/device\ link"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ "{}Operation\ not\ supported\ by\ device"{},\ "{}Not\ a\ directory"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ "{}Is\ a\ directory"{},\ "{}Invalid\ argument"{},\ "{}Too\ many\ open\ files\ in\ system"{},\ \(\backslash\)}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ "{}Too\ many\ open\ files"{},\ "{}Inappropriate\ ioctl\ for\ device"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ "{}Text\ file\ busy"{},\ "{}File\ too\ large"{},\ "{}No\ space\ left\ on\ device"{},\ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ "{}Illegal\ seek"{},\ "{}Read-\/only\ file\ system"{},\ "{}Too\ many\ links"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ "{}Broken\ pipe"{},\ "{}Numerical\ argument\ out\ of\ domain"{},\ "{}Result\ too\ large"{},\ \(\backslash\)}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ "{}Resource\ temporarily\ unavailable"{},\ "{}Operation\ now\ in\ progress"{},\ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ "{}Operation\ already\ in\ progress"{},\ "{}Socket\ operation\ on\ non-\/socket"{},\ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ "{}Destination\ address\ required"{},\ "{}Message\ too\ long"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ "{}Protocol\ wrong\ type\ for\ socket"{},\ "{}Protocol\ not\ available"{},\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ "{}Protocol\ not\ supported"{},\ "{}Socket\ type\ not\ supported"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ "{}Operation\ not\ supported"{},\ "{}Protocol\ family\ not\ supported"{},\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ "{}Address\ family\ not\ supported\ by\ protocol\ family"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ "{}Address\ already\ in\ use"{},\ "{}Can't\ assign\ requested\ address"{},\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ "{}Network\ is\ down"{},\ "{}Network\ is\ unreachable"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ "{}Network\ dropped\ connection\ on\ reset"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ "{}Software\ caused\ connection\ abort"{},\ "{}Connection\ reset\ by\ peer"{},\ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ "{}No\ buffer\ space\ available"{},\ "{}Socket\ is\ already\ connected"{},\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ "{}Socket\ is\ not\ connected"{},\ "{}Can't\ send\ after\ socket\ shutdown"{},\ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ "{}Too\ many\ references:\ can't\ splice"{},\ "{}Operation\ timed\ out"{},\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ "{}Connection\ refused"{},\ "{}Too\ many\ levels\ of\ symbolic\ links"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ "{}File\ name\ too\ long"{},\ "{}Host\ is\ down"{},\ "{}No\ route\ to\ host"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ "{}Directory\ not\ empty"{},\ "{}Too\ many\ processes"{},\ "{}Too\ many\ users"{},\ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ "{}Disc\ quota\ exceeded"{},\ "{}Stale\ NFS\ file\ handle"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ "{}Too\ many\ levels\ of\ remote\ in\ path"{},\ "{}RPC\ struct\ is\ bad"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ "{}RPC\ version\ wrong"{},\ "{}RPC\ prog.\ not\ avail"{},\ "{}Program\ version\ wrong"{},\ \ \ \(\backslash\)}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ "{}Bad\ procedure\ for\ program"{},\ "{}No\ locks\ available"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ "{}Function\ not\ implemented"{},\ "{}Inappropriate\ file\ type\ or\ format"{},\ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ "{}Authentication\ error"{},\ "{}Need\ authenticator"{},\ "{}Device\ power\ is\ off"{},\ \ \ \(\backslash\)}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ "{}Device\ error"{},\ "{}Value\ too\ large\ to\ be\ stored\ in\ data\ type"{},\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ "{}Bad\ executable\ (or\ shared\ library)"{},\ "{}Bad\ CPU\ type\ in\ executable"{},\ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ "{}Shared\ library\ version\ mismatch"{},\ "{}Malformed\ Mach-\/o\ file"{},\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ "{}Operation\ canceled"{},\ "{}Identifier\ removed"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ "{}No\ message\ of\ desired\ type"{},\ "{}Illegal\ byte\ sequence"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ "{}Attribute\ not\ found"{},\ "{}Bad\ message"{},\ "{}EMULTIHOP\ (Reserved)"{},\ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ "{}No\ message\ available\ on\ STREAM"{},\ "{}ENOLINK\ (Reserved)"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ "{}No\ STREAM\ resources"{},\ "{}Not\ a\ STREAM"{},\ "{}Protocol\ error"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ "{}STREAM\ ioctl\ timeout"{},\ "{}Operation\ not\ supported\ on\ socket"{},\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ "{}Policy\ not\ found"{},\ "{}State\ not\ recoverable"{},\ "{}Previous\ owner\ died"{},\ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ "{}Interface\ output\ queue\ is\ full"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00530\ \ \ \}}
+\DoxyCodeLine{00531\ }
+\DoxyCodeLine{00532\ \textcolor{preprocessor}{\#elif\ defined(\_\_linux\_\_)}}
+\DoxyCodeLine{00533\ \textcolor{preprocessor}{\#define\ N\ 133}}
+\DoxyCodeLine{00534\ \textcolor{preprocessor}{\#define\ LIST\_ERRORS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00535\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00536\ \textcolor{preprocessor}{\ \ \ \ "{}Success"{}},\ "{}Operation\ not\ permitted"{},\ "{}No\ such\ file\ or\ directory"{},\ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ "{}No\ such\ process"{},\ "{}Interrupted\ system\ call"{},\ "{}Input/output\ error"{},\ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ "{}No\ such\ device\ or\ address"{},\ "{}Argument\ list\ too\ long"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ "{}Exec\ format\ error"{},\ "{}Bad\ file\ descriptor"{},\ "{}No\ child\ processes"{},\ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ "{}Resource\ temporarily\ unavailable"{},\ "{}Cannot\ allocate\ memory"{},\ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ "{}Permission\ denied"{},\ "{}Bad\ address"{},\ "{}Block\ device\ required"{},\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ "{}Device\ or\ resource\ busy"{},\ "{}File\ exists"{},\ "{}Invalid\ cross-\/device\ link"{},\ \(\backslash\)}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ "{}No\ such\ device"{},\ "{}Not\ a\ directory"{},\ "{}Is\ a\ directory"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ "{}Invalid\ argument"{},\ "{}Too\ many\ open\ files\ in\ system"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ "{}Too\ many\ open\ files"{},\ "{}Inappropriate\ ioctl\ for\ device"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ "{}Text\ file\ busy"{},\ "{}File\ too\ large"{},\ "{}No\ space\ left\ on\ device"{},\ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ "{}Illegal\ seek"{},\ "{}Read-\/only\ file\ system"{},\ "{}Too\ many\ links"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ "{}Broken\ pipe"{},\ "{}Numerical\ argument\ out\ of\ domain"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ "{}Numerical\ result\ out\ of\ range"{},\ "{}Resource\ deadlock\ avoided"{},\ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ "{}File\ name\ too\ long"{},\ "{}No\ locks\ available"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ "{}Function\ not\ implemented"{},\ "{}Directory\ not\ empty"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ "{}Too\ many\ levels\ of\ symbolic\ links"{},\ "{}Unknown\ error\ 41"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ "{}No\ message\ of\ desired\ type"{},\ "{}Identifier\ removed"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ "{}Channel\ number\ out\ of\ range"{},\ "{}Level\ 2\ not\ synchronized"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ "{}Level\ 3\ halted"{},\ "{}Level\ 3\ reset"{},\ "{}Link\ number\ out\ of\ range"{},\ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ "{}Protocol\ driver\ not\ attached"{},\ "{}No\ CSI\ structure\ available"{},\ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ "{}Level\ 2\ halted"{},\ "{}Invalid\ exchange"{},\ "{}Invalid\ request\ descriptor"{},\ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ "{}Exchange\ full"{},\ "{}No\ anode"{},\ "{}Invalid\ request\ code"{},\ "{}Invalid\ slot"{},\ \ \ \(\backslash\)}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ "{}Unknown\ error\ 58"{},\ "{}Bad\ font\ file\ format"{},\ "{}Device\ not\ a\ stream"{},\ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ "{}No\ data\ available"{},\ "{}Timer\ expired"{},\ "{}Out\ of\ streams\ resources"{},\ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ "{}Machine\ is\ not\ on\ the\ network"{},\ "{}Package\ not\ installed"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ "{}Object\ is\ remote"{},\ "{}Link\ has\ been\ severed"{},\ "{}Advertise\ error"{},\ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ "{}Srmount\ error"{},\ "{}Communication\ error\ on\ send"{},\ "{}Protocol\ error"{},\ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ "{}Multihop\ attempted"{},\ "{}RFS\ specific\ error"{},\ "{}Bad\ message"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ "{}Value\ too\ large\ for\ defined\ data\ type"{},\ "{}Name\ not\ unique\ on\ network"{},\ \(\backslash\)}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ "{}File\ descriptor\ in\ bad\ state"{},\ "{}Remote\ address\ changed"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ "{}Can\ not\ access\ a\ needed\ shared\ library"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ "{}Accessing\ a\ corrupted\ shared\ library"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00569\ \ \ \ \ \ \ \ \ "{}.lib\ section\ in\ a.out\ corrupted"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ "{}Attempting\ to\ link\ in\ too\ many\ shared\ libraries"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ "{}Cannot\ exec\ a\ shared\ library\ directly"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ "{}Invalid\ or\ incomplete\ multibyte\ or\ wide\ character"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ "{}Interrupted\ system\ call\ should\ be\ restarted"{},\ "{}Streams\ pipe\ error"{},\ \ \ \(\backslash\)}
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ "{}Too\ many\ users"{},\ "{}Socket\ operation\ on\ non-\/socket"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ "{}Destination\ address\ required"{},\ "{}Message\ too\ long"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ "{}Protocol\ wrong\ type\ for\ socket"{},\ "{}Protocol\ not\ available"{},\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ "{}Protocol\ not\ supported"{},\ "{}Socket\ type\ not\ supported"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ "{}Operation\ not\ supported"{},\ "{}Protocol\ family\ not\ supported"{},\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ "{}Address\ family\ not\ supported\ by\ protocol"{},\ "{}Address\ already\ in\ use"{},\ \ \(\backslash\)}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ "{}Cannot\ assign\ requested\ address"{},\ "{}Network\ is\ down"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ "{}Network\ is\ unreachable"{},\ "{}Network\ dropped\ connection\ on\ reset"{},\ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ "{}Software\ caused\ connection\ abort"{},\ "{}Connection\ reset\ by\ peer"{},\ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ "{}No\ buffer\ space\ available"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ "{}Transport\ endpoint\ is\ already\ connected"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ "{}Transport\ endpoint\ is\ not\ connected"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ "{}Cannot\ send\ after\ transport\ endpoint\ shutdown"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ "{}Too\ many\ references:\ cannot\ splice"{},\ "{}Connection\ timed\ out"{},\ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ "{}Connection\ refused"{},\ "{}Host\ is\ down"{},\ "{}No\ route\ to\ host"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ "{}Operation\ already\ in\ progress"{},\ "{}Operation\ now\ in\ progress"{},\ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ "{}Stale\ file\ handle"{},\ "{}Structure\ needs\ cleaning"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ "{}Not\ a\ XENIX\ named\ type\ file"{},\ "{}No\ XENIX\ semaphores\ available"{},\ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ "{}Is\ a\ named\ type\ file"{},\ "{}Remote\ I/O\ error"{},\ "{}Disk\ quota\ exceeded"{},\ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ "{}No\ medium\ found"{},\ "{}Wrong\ medium\ type"{},\ "{}Operation\ canceled"{},\ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ "{}Required\ key\ not\ available"{},\ "{}Key\ has\ expired"{},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ "{}Key\ has\ been\ revoked"{},\ "{}Key\ was\ rejected\ by\ service"{},\ "{}Owner\ died"{},\ \ \ \(\backslash\)}
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ "{}State\ not\ recoverable"{},\ "{}Operation\ not\ possible\ due\ to\ RF-\/kill"{},\ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ "{}Memory\ page\ has\ hardware\ error"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{00598\ \ \ \}}
+\DoxyCodeLine{00599\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00600\ }
+\DoxyCodeLine{00601\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

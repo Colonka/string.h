@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "s21_string.h"
+#include "../s21_string.h"
 
 START_TEST(test_strlen) {
   char *strings[] = {
@@ -625,11 +625,6 @@ START_TEST(test_part1_sprintf) {
                    s21_sprintf(str2, "KLer%-5.0hd' Mah", xxx));
   ck_assert_str_eq(str1, str2);
   clear_buffs(&p, &p2);
-
-  // ck_assert_int_eq(sprintf(str1, "KLer%+5.0hd' Mah", 84846734),
-  //                  s21_sprintf(str2, "KLer%+5.0hd' Mah", 84846734));
-  // ck_assert_str_eq(str1, str2);
-  // clear_buffs(&p, &p2);
 
   sprintf(str1, "KLer%-+15.0ld' Mah", 1234567890123456789);
   s21_sprintf(str2, "KLer%-+15.0ld' Mah", 1234567890123456789);
